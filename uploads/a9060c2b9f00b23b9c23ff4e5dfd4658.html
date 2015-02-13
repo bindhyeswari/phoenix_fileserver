@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Example</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <!--How to include jquery in an html page - by external cdn, minified version and local copy-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style type="text/css">
+
+        div.mydiv {
+            min-height: 10em;
+            min-width: 10em;
+            border: 1px solid gray;
+            box-shadow: 1px 1px 5px #ccc;
+            margin: 6em;
+            padding: 1em;
+        }
+
+        #myspan {
+            display: inline-block;
+            background-color: slateblue;
+            border-radius: 0.15em;
+            min-height: 1em;
+            min-width: 40em;
+            margin: 6em;
+        }
+
+        form {
+            margin: 6em;
+            padding: 1em;
+            border: 1px solid gray;
+        }
+
+        img {
+            margin: 3em;
+            height: 3em;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        $(function(){
+            $('#btn_do_something').click(function(){
+
+
+
+                var op = $('#inptext').attr('type');
+
+
+                var x = op.html('sadfsadf').css().attr();
+
+
+
+                console.log(op);
+
+                $('#img').attr(
+                        {
+                    src: 'http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png',
+                    alt: 'HTML5'
+
+                                });
+
+                // Execute prior code
+                $('#img').wrap('<div></div>');
+
+                // Execute prior code
+                $('#img').removeAttr();
+
+                // Execute prior code
+                // Provide target blank to all external links (open in new window)
+                $('a').attr("target", function(){
+                    console.log(this);
+                    if (this.host == location.host) {
+                        return "_self"
+                    } else {
+                        return "_blank";
+                    }
+                });
+
+                // CSS Attributes
+                $('input[type="file"]').css({'font-weight':'bold'});
+                $('input[type="text"]').css({'fontWeight':'bold'});
+                op = $('#inptext').css('font');     // cannot query shorthand/multiple css properties
+                console.log(op);
+                $('#inptext').css({'font': '100 1.2em "Open Sans"'}); // can set multiple/shorthand css properties
+
+
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <h1>Getters and Setters</h1>
+    <span class="button" id='btn_do_something'>Do Something!</span>
+    <div class="container">
+
+
+
+    </div>
+    <img id='img' src="" alt=""/>
+    <form style="">
+        <input type="button" value="Input Button">
+        <input type="checkbox">
+        <input type="file">
+        <input type="password">
+        <input type="radio">
+        <input type="reset">
+        <input type="submit">
+        <input id='inptext' type="text" value='some value'>
+        <select>
+            <option value="Krithika">Krithika</option>
+            <option value="Raj">Raj</option>
+            <option value="Foram">Foram</option>
+        </select>
+        <textarea></textarea>
+        <button>Button</button>
+    </form>
+    <div class="container">
+        <a href="css/base.css">Base CSS File</a>
+        <a href="http://www.google.com">Google</a>
+        <a href="http://www.facebook.com">Facebook</a>
+    </div>
+</div>
+</body>
+</html>
